@@ -1,0 +1,1 @@
+-keep class com.danil.kleshchin.elapsed_time.DateTimeUtilsKt { *; }
