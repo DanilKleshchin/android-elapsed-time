@@ -4,6 +4,7 @@ import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
+import java.util.TimeZone
 
 /**
  * An util file for converting date time to timestamp and vice versa.
@@ -21,17 +22,31 @@ const val pattern_6 = "yyyy-MM-dd HH:mm:ss"
 const val pattern_7 = "dd-MM-yyyy HH:mm:ss"
 const val pattern_8 = "EEE, dd MMM yyyy HH:mm:ss"
 
+const val GMT_TIME_ZONE = "GMT"
 
-fun getTimestampFromDateTime(dateTime: String, dateTimePattern: String, locale: Locale): Long {
+
+fun getTimestampFromDateTime(
+    dateTime: String,
+    dateTimePattern: String,
+    timeZone: TimeZone = TimeZone.getTimeZone(GMT_TIME_ZONE),
+    locale: Locale
+): Long {
     return try {
         val timeFormat = SimpleDateFormat(dateTimePattern, locale)
+        timeFormat.timeZone = timeZone
         timeFormat.parse(dateTime)?.time ?: UNKNOWN_TIME
     } catch (e: ParseException) {
         UNKNOWN_TIME
     }
 }
 
-fun getDateTimeFromTimestamp(timeStamp: Long, dateTimePattern: String, locale: Locale): String {
+fun getDateTimeFromTimestamp(
+    timeStamp: Long,
+    dateTimePattern: String,
+    timeZone: TimeZone = TimeZone.getDefault(),
+    locale: Locale
+): String {
     val timeFormat = SimpleDateFormat(dateTimePattern, locale)
+    timeFormat.timeZone = timeZone
     return timeFormat.format(Date(timeStamp))
 }
