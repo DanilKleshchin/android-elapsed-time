@@ -13,14 +13,14 @@ const val oneHourSeconds = 3600L
 const val oneDaySeconds = 86_400L
 const val oneWeekSeconds = 604_800L
 const val oneMonthSeconds = 2_592_000L
-const val oneYearSeconds = 31_104_000L
+const val oneYearSeconds = 31_556_952L
 
 const val secondsInAlmostOneMinute = 59L
 const val secondsInAlmostOneHour = 3599L
 const val secondsInAlmostOneDay = 86_399L
 const val secondsInAlmostOneWeek = 604_799L
 const val secondsInAlmostOneMonth = 2_591_999L
-const val secondsInAlmostOneYear = 31_103_999L
+const val secondsInAlmostOneYear = 31_556_953L
 
 /**
  * @param beginTimestamp - The time from which to count in millis.
@@ -65,41 +65,41 @@ fun getElapsedTimeString(
 
 @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
 fun getSecondsElapsedTime(resources: Resources, timeSeconds: Long): String {
-    return getElapsedTimeString(resources, timeSeconds, oneSecondSeconds, R.plurals.second_elapsed)
+    return countElapsedTimeString(resources, timeSeconds, oneSecondSeconds, R.plurals.second_elapsed)
 }
 
 @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
 fun getMinutesElapsedTime(resources: Resources, timeSeconds: Long): String {
-    return getElapsedTimeString(resources, timeSeconds, oneMinuteSeconds, R.plurals.minute_elapsed)
+    return countElapsedTimeString(resources, timeSeconds, oneMinuteSeconds, R.plurals.minute_elapsed)
 }
 
 @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
 fun getHourlyElapsedTime(resources: Resources, timeSeconds: Long): String {
-    return getElapsedTimeString(resources, timeSeconds, oneHourSeconds, R.plurals.hour_elapsed)
+    return countElapsedTimeString(resources, timeSeconds, oneHourSeconds, R.plurals.hour_elapsed)
 }
 
 @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
 fun getDailyElapsedTime(resources: Resources, timeSeconds: Long): String {
-    return getElapsedTimeString(resources, timeSeconds, oneDaySeconds, R.plurals.day_elapsed)
+    return countElapsedTimeString(resources, timeSeconds, oneDaySeconds, R.plurals.day_elapsed)
 }
 
 @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
 fun getWeeklyElapsedTime(resources: Resources, timeSeconds: Long): String {
-    return getElapsedTimeString(resources, timeSeconds, oneWeekSeconds, R.plurals.week_elapsed)
+    return countElapsedTimeString(resources, timeSeconds, oneWeekSeconds, R.plurals.week_elapsed)
 }
 
 @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
 fun getMonthlyElapsedTime(resources: Resources, timeSeconds: Long): String {
-    return getElapsedTimeString(resources, timeSeconds, oneMonthSeconds, R.plurals.month_elapsed)
+    return countElapsedTimeString(resources, timeSeconds, oneMonthSeconds, R.plurals.month_elapsed)
 }
 
 @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
 fun getYearlyElapsedTime(resources: Resources, timeSeconds: Long): String {
-    return getElapsedTimeString(resources, timeSeconds, oneYearSeconds, R.plurals.year_elapsed)
+    return countElapsedTimeString(resources, timeSeconds, oneYearSeconds, R.plurals.year_elapsed)
 }
 
 @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
-fun getElapsedTimeString(
+fun countElapsedTimeString(
     resources: Resources,
     timeSeconds: Long,
     oneItemSeconds: Long,

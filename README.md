@@ -25,8 +25,13 @@ dependencies {
 ## Usage
 ```kotlin
 val resources = context.resources // All strings are stored in the Android plurals res directory.
-val dateTime = "2021-03-03T22:13:08"
-val timestamp = getTimestampFromDateTime(dateTime, pattern_1, Locale.getDefault()) // The pattern_1 and getTimestampFromDateTime() are included in the lib
+val dateTime = "22/12/2021 22:13:08"
+val timestamp = getTimestampFromDateTime( // pattern_2 and getTimestampFromDateTime() are included in the lib
+            dateTime = dateTime,
+            dateTimePattern = pattern_2,
+            timeZone = TimeZone.getTimeZone("GMT+4"), //The timezone param is optional. Default is GMT
+            locale = Locale.getDefault()
+    )
 val currentTime = System.currentTimeMillis() // You can use your own timestamp
 
 val elapsedTime = getElapsedTimeString(timestamp, currentTime, resources) // "1 day ago"
