@@ -29,7 +29,7 @@ fun getTimestampFromDateTime(
     dateTime: String,
     dateTimePattern: String,
     timeZone: TimeZone = TimeZone.getTimeZone(GMT_TIME_ZONE),
-    locale: Locale
+    locale: Locale = Locale.getDefault()
 ): Long {
     return try {
         val timeFormat = SimpleDateFormat(dateTimePattern, locale)
@@ -44,7 +44,7 @@ fun getDateTimeFromTimestamp(
     timeStamp: Long,
     dateTimePattern: String,
     timeZone: TimeZone = TimeZone.getDefault(),
-    locale: Locale
+    locale: Locale = Locale.getDefault()
 ): String {
     val timeFormat = SimpleDateFormat(dateTimePattern, locale)
     timeFormat.timeZone = timeZone

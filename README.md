@@ -29,8 +29,8 @@ val dateTime = "22/12/2021 22:13:08"
 val timestamp = getTimestampFromDateTime( // pattern_2 and getTimestampFromDateTime() are included in the lib
             dateTime = dateTime,
             dateTimePattern = pattern_2,
-            timeZone = TimeZone.getTimeZone("GMT+4"), //The timezone param is optional. Default is GMT
-            locale = Locale.getDefault()
+            timeZone = TimeZone.getTimeZone("GMT+4"), //The timezone param is optional
+            locale = Locale("de") //The locale param is optional
     )
 val currentTime = System.currentTimeMillis() // You can use your own timestamp
 
