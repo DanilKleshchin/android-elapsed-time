@@ -12,15 +12,10 @@ const val oneMinuteSeconds = 60L
 const val oneHourSeconds = 3600L
 const val oneDaySeconds = 86_400L
 const val oneWeekSeconds = 604_800L
-const val oneMonthSeconds = 2_592_000L
-const val oneYearSeconds = 31_556_952L
-
-const val secondsInAlmostOneMinute = 59L
-const val secondsInAlmostOneHour = 3599L
-const val secondsInAlmostOneDay = 86_399L
-const val secondsInAlmostOneWeek = 604_799L
-const val secondsInAlmostOneMonth = 2_591_999L
-const val secondsInAlmostOneYear = 31_556_953L
+const val oneMonthSeconds = 2_629_746L
+const val twelveMonthsSeconds = 31_536_000L
+const val tenYearsSeconds = 315_360_000L
+const val oneYearRoundedSeconds = 31_556_952L
 
 /**
  * @param beginTimestamp - The time from which to count in millis.
@@ -39,26 +34,29 @@ fun getElapsedTimeString(
     }
 
     when (difference) {
-        in zeroSeconds..secondsInAlmostOneMinute -> {
+        in zeroSeconds until oneMinuteSeconds -> {
             return getSecondsElapsedTime(resources, difference)
         }
-        in oneMinuteSeconds..secondsInAlmostOneHour -> {
+        in oneMinuteSeconds until oneHourSeconds -> {
             return getMinutesElapsedTime(resources, difference)
         }
-        in oneHourSeconds..secondsInAlmostOneDay -> {
+        in oneHourSeconds until oneDaySeconds -> {
             return getHourlyElapsedTime(resources, difference)
         }
-        in oneDaySeconds..secondsInAlmostOneWeek -> {
+        in oneDaySeconds until oneWeekSeconds -> {
             return getDailyElapsedTime(resources, difference)
         }
-        in oneWeekSeconds..secondsInAlmostOneMonth -> {
+        in oneWeekSeconds until oneMonthSeconds -> {
             return getWeeklyElapsedTime(resources, difference)
         }
-        in oneMonthSeconds..secondsInAlmostOneYear -> {
+        in oneMonthSeconds until twelveMonthsSeconds -> {
             return getMonthlyElapsedTime(resources, difference)
         }
-        else -> {
+        in twelveMonthsSeconds until tenYearsSeconds -> {
             return getYearlyElapsedTime(resources, difference)
+        }
+        else -> {
+            return getYearlyRoundedElapsedTime(resources, difference)
         }
     }
 }
@@ -95,7 +93,12 @@ fun getMonthlyElapsedTime(resources: Resources, timeSeconds: Long): String {
 
 @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
 fun getYearlyElapsedTime(resources: Resources, timeSeconds: Long): String {
-    return countElapsedTimeString(resources, timeSeconds, oneYearSeconds, R.plurals.year_elapsed)
+    return countElapsedTimeString(resources, timeSeconds, twelveMonthsSeconds, R.plurals.year_elapsed)
+}
+
+@VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
+fun getYearlyRoundedElapsedTime(resources: Resources, timeSeconds: Long): String {
+    return countElapsedTimeString(resources, timeSeconds, oneYearRoundedSeconds, R.plurals.year_elapsed)
 }
 
 @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)

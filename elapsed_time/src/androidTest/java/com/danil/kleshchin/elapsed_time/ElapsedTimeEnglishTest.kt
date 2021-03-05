@@ -99,14 +99,14 @@ class ElapsedTimeEnglishTest {
 
     @Test
     fun one_year_ago_test() {
-        val time = "03/03/2020 22:13:08"
+        val time = "28/02/2019 22:13:08"
         val timeStamp = getTimestampFromDateTime(
             dateTime = time,
             dateTimePattern = pattern_2,
             locale = Locale.getDefault()
         )
 
-        val currentTime = "03/03/2021 22:13:08"
+        val currentTime = "28/02/2020 22:13:08"
         val currentTimestamp =
             getTimestampFromDateTime(
                 dateTime = currentTime,
@@ -226,6 +226,62 @@ class ElapsedTimeEnglishTest {
                 locale = Locale.getDefault()
             )
         val expect = "5 years ago"
+
+        Assert.assertEquals(
+            expect,
+            getElapsedTimeString(
+                timeStamp,
+                currentTimestamp,
+                resources
+            )
+        )
+    }
+
+    @Test
+    fun ten_years_ago_test() {
+        val time = "03/03/2011 22:13:08"
+        val timeStamp = getTimestampFromDateTime(
+            dateTime = time,
+            dateTimePattern = pattern_2,
+            locale = Locale.getDefault()
+        )
+
+        val currentTime = "03/03/2021 22:13:08"
+        val currentTimestamp =
+            getTimestampFromDateTime(
+                dateTime = currentTime,
+                dateTimePattern = pattern_2,
+                locale = Locale.getDefault()
+            )
+        val expect = "10 years ago"
+
+        Assert.assertEquals(
+            expect,
+            getElapsedTimeString(
+                timeStamp,
+                currentTimestamp,
+                resources
+            )
+        )
+    }
+
+    @Test
+    fun twenty_years_ago_test() {
+        val time = "03/03/2001 22:13:08"
+        val timeStamp = getTimestampFromDateTime(
+            dateTime = time,
+            dateTimePattern = pattern_2,
+            locale = Locale.getDefault()
+        )
+
+        val currentTime = "03/03/2021 22:13:08"
+        val currentTimestamp =
+            getTimestampFromDateTime(
+                dateTime = currentTime,
+                dateTimePattern = pattern_2,
+                locale = Locale.getDefault()
+            )
+        val expect = "20 years ago"
 
         Assert.assertEquals(
             expect,
@@ -441,12 +497,12 @@ class ElapsedTimeEnglishTest {
 
     @Test
     fun elapsed_month_test() {
-        val timeMonth = 2_592_000L
+        val timeMonth = 2_629_746L
         val expectMonth = "1 month ago"
-        val time2Months = 5_184_000L
+        val time2Months = 5_259_492L
         val expect2Months = "2 months ago"
-        val time11Month = 31_103_999L // almost 12 months (1 year)
-        val expect11Month = "11 months ago"
+        val time11Months = 31_556_951L // almost 12 months (1 year)
+        val expect11Months = "11 months ago"
         Assert.assertEquals(
             expectMonth,
             getMonthlyElapsedTime(
@@ -462,17 +518,17 @@ class ElapsedTimeEnglishTest {
             )
         )
         Assert.assertEquals(
-            expect11Month,
+            expect11Months,
             getMonthlyElapsedTime(
                 resources,
-                time11Month
+                time11Months
             )
         )
     }
 
     @Test
     fun elapsed_years_test() {
-        val timeYear = 31_104_000L
+        val timeYear = 31_556_952L
         val expectYear = "1 year ago"
         val time5Years = 157_784_760L
         val expect5Years = "5 years ago"

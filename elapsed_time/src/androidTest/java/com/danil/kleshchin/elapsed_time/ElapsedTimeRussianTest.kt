@@ -91,24 +91,24 @@ class ElapsedTimeRussianTest {
 
     @Test
     fun elapsed_month_test() {
-        val timeMonth = 2_592_000L
+        val timeMonth = 2_629_746L
         val expectMonth = "1 месяц назад"
-        val time2Months = 5_184_000L
+        val time2Months = 5_259_492L
         val expect2Months = "2 месяца назад"
-        val time11Month = 31_103_999L // almost 12 months (1 year)
+        val time11Months = 31_556_951L // almost 12 months (1 year)
         val expect11Month = "11 месяцев назад"
         Assert.assertEquals(expectMonth, getMonthlyElapsedTime(resources, timeMonth))
         Assert.assertEquals(expect2Months, getMonthlyElapsedTime(resources, time2Months))
-        Assert.assertEquals(expect11Month, getMonthlyElapsedTime(resources, time11Month))
+        Assert.assertEquals(expect11Month, getMonthlyElapsedTime(resources, time11Months))
     }
 
     @Test
     fun elapsed_years_test() {
-        val timeYear = 31_104_000L
+        val timeYear = 31_556_952L
         val expectYear = "1 год назад"
-        val time2Years = 62_208_000L
+        val time2Years = 63_113_904L
         val expect2Years = "2 года назад"
-        val time5Years = 155_520_000L
+        val time5Years = 157_784_760L
         val expect5Years = "5 лет назад"
         Assert.assertEquals(expectYear, getYearlyElapsedTime(resources, timeYear))
         Assert.assertEquals(expect2Years, getYearlyElapsedTime(resources, time2Years))
