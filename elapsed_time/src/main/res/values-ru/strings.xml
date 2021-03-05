@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app1_name">Тестовая сторка</string>
-
     <plurals name="second_elapsed">
         <item quantity="one">%d секунду назад</item>
         <item quantity="few">%d секунды назад</item>

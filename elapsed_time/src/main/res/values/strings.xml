@@ -1,6 +1,4 @@
 <resources>
-    <string name="app1_name">Elapsed Time</string>
-
     <plurals name="second_elapsed">
         <item quantity="one">%d second ago</item>
         <item quantity="other">%d seconds ago</item>

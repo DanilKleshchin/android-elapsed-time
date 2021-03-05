@@ -1,0 +1,36 @@
+<resources>
+    <plurals name="second_elapsed">
+        <item quantity="one">Vor %d Sekunde</item>
+        <item quantity="other">Vor %d Sekunden</item>
+    </plurals>
+
+    <plurals name="minute_elapsed">
+        <item quantity="one">Vor %d Minute</item>
+        <item quantity="other">Vor %d Minuten</item>
+    </plurals>
+
+    <plurals name="hour_elapsed">
+        <item quantity="one">Vor %d Stunde</item>
+        <item quantity="other">Vor %d Stunden</item>
+    </plurals>
+
+    <plurals name="day_elapsed">
+        <item quantity="one">Vor %d Tag</item>
+        <item quantity="other">Vor %d Tagen</item>
+    </plurals>
+
+    <plurals name="week_elapsed">
+        <item quantity="one">Vor %d Woche</item>
+        <item quantity="other">Vor %d Wochen</item>
+    </plurals>
+
+    <plurals name="month_elapsed">
+        <item quantity="one">Vor %d Monat</item>
+        <item quantity="other">Vor %d Monaten</item>
+    </plurals>
+
+    <plurals name="year_elapsed">
+        <item quantity="one">Vor %d Jahr</item>
+        <item quantity="other">Vor %d Jahren</item>
+    </plurals>
+</resources>
