@@ -12,12 +12,14 @@ import java.util.Locale
 const val UNKNOWN_TIME = -1L
 
 //Most commonly used date time formats
-const val pattern_1 = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+const val pattern_1 = "yyyy-MM-dd'T'HH:mm:ss"
 const val pattern_2 = "dd/MM/yyyy HH:mm:ss"
 const val pattern_3 = "EEE, dd MMM yyyy HH:mm:ss Z"
 const val pattern_4 = "EEE, yyyy-MM-dd HH:mm"
 const val pattern_5 = "yyyy/MM/dd HH:mm"
-const val pattern_6 = "EEE, dd MMM yyyy HH:mm:ss"
+const val pattern_6 = "yyyy-MM-dd HH:mm:ss"
+const val pattern_7 = "dd-MM-yyyy HH:mm:ss"
+const val pattern_8 = "EEE, dd MMM yyyy HH:mm:ss"
 
 
 fun getTimestampFromDateTime(dateTime: String, dateTimePattern: String, locale: Locale): Long {
