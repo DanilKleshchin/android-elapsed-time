@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="second_elapsed">
+        <item quantity="one">Il y a %d seconde</item>
+        <item quantity="other">Il y a %d secondes</item>
+    </plurals>
+
+    <plurals name="minute_elapsed">
+        <item quantity="one">Il y a %d minute</item>
+        <item quantity="other">Il y a %d minutes</item>
+    </plurals>
+
+    <plurals name="hour_elapsed">
+        <item quantity="one">Il ya %d heure</item>
+        <item quantity="other">Il y a %d heures</item>
+    </plurals>
+
+    <plurals name="day_elapsed">
+        <item quantity="one">Il y a %d jour</item>
+        <item quantity="other">Il y a %d jours</item>
+    </plurals>
+
+    <plurals name="week_elapsed">
+        <item quantity="one">Il ya %d semaine</item>
+        <item quantity="other">Il y a %d semaines</item>
+    </plurals>
+
+    <plurals name="month_elapsed">
+        <item quantity="one">Il ya %d mois</item>
+        <item quantity="other">Il y a %d mois</item>
+    </plurals>
+
+    <plurals name="year_elapsed">
+        <item quantity="one">Il y a %d an</item>
+        <item quantity="other">Il y a %d ans</item>
+    </plurals>
+</resources>
