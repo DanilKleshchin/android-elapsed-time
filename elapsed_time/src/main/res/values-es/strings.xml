@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="second_elapsed">
+        <item quantity="one">Hace %d segundo</item>
+        <item quantity="other">Hace %d segundos</item>
+    </plurals>
+
+    <plurals name="minute_elapsed">
+        <item quantity="one">Hace %d minuto</item>
+        <item quantity="other">Hace %d minutos</item>
+    </plurals>
+
+    <plurals name="hour_elapsed">
+        <item quantity="one">%d hora antes</item>
+        <item quantity="other">Hace %d horas</item>
+    </plurals>
+
+    <plurals name="day_elapsed">
+        <item quantity="one">Hace %d día</item>
+        <item quantity="other">Hace %d días</item>
+    </plurals>
+
+    <plurals name="week_elapsed">
+        <item quantity="one">Hace %d semana</item>
+        <item quantity="other">Hace %d semanas</item>
+    </plurals>
+
+    <plurals name="month_elapsed">
+        <item quantity="one">Hace %d mes</item>
+        <item quantity="other">Hace %d meses</item>
+    </plurals>
+
+    <plurals name="year_elapsed">
+        <item quantity="one">Hace %d año</item>
+        <item quantity="other">Hace %d años</item>
+    </plurals>
+</resources>
