@@ -42,4 +42,6 @@ The _getElapsedTimeString()_ method returns a string of elapsed time based on th
 ## Supported languages
 * English
 * German
+* French
 * Russian
+* Spanish
